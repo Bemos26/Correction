@@ -8,17 +8,184 @@
 <meta name="description" content="EduRahisi - Your gateway to educational resources and opportunities.">
 <meta name="keywords" content="education, resources, opportunities, learning, online courses">  
 <body>
-    <h1>Welcome to EduRahisi</h1>
-    <p>Your gateway to educational resources and opportunities.</p>
-    <nav>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #555;
+        }
+        h1 {
+            color: #333;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color:white
+            ;
+        }
+        section {
+            margin-top: 20px;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+        footer p {
+            margin: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .home-container {
+            width: 90%;
+            max-height: 90%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            align-items: center;
+        }
+        .nav-button {
+            background-color: forestgreen;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #signup-btn {
+            background: forestgreen;
+            color: white;
+            padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+
+}
+
+#signup-btn:hover {
+    background: #0056b3;
+}
+
+#signup-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 80%;
+    background: forestgreen;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    border-radius: 10px;
+}
+#menu {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#menu-toggle {
+    background:forestgreen;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    display: grid;
+
+
+}
+
+#menu-toggle:hover {
+    background: #0056b3;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 10px 0;
+}
+
+    </style>
+    <div class="home-container">
+        <button id="menu-toggle">Menu</button>
+        <div id="menu" style="display: none;">
+        <nav>
         <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="faq.html">FAQ</a></li>
+            <li><button class="nav-button"><a href="about.html">About Us</a></button></li>
+            <li><button class="nav-button"><a href="courses.html">Courses</a></button></li>
+            <li><button class="nav-button"><a href="testimonials.html">Testimonials</a></button></li>
+            <li><button class="nav-button"><a href="faq.html">FAQ</a></button></li>
 
         </ul>
     </nav>
+        </div>
+    <h1>Welcome to EduRahisi</h1>
+    <p>Your gateway to educational resources and opportunities.</p>
+   
+    <section>
+        <h2>Our Mission</h2>
+        <p>At EduRahisi, we are dedicated to providing accessible and high-quality educational resources for students, teachers, and parents. Our mission is to bridge the gap between learners and educators, fostering a collaborative environment that promotes growth and success.</p>
+    </section>
+    <section>
+        <h2>Our Vision</h2>
+        <p>We envision a world where education is inclusive, engaging, and effective, shaping the mentality of learners and the future of learning.</p>
+    </section>
+    <section>
+        <h2>Our Values</h2>
+        <ul>
+            <li>Inclusivity: We believe in making education accessible to everyone.</li>
+            <li>Collaboration: We foster a community where learners and educators can work together.</li>
+            <li>Innovation: We embrace new ideas and technologies to enhance the learning experience.</li>
+            <li>Integrity: We uphold the highest standards of honesty and transparency in all our interactions.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Get Started</h2>
+        <p>Ready to start your learning journey? Explore our courses and resources to enhance your skills and knowledge.</p>
+        <p>
+            <button id="signup-btn">Sign Up</button>
+
+<div id="signup-form" style="display: none;">
+    <h2>Sign Up</h2>
+    <form>
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+        </p>
+    </section>
     <section>
         <h2>Contact Us</h2>
         <p>If you have any questions or need assistance, feel free to reach out to us.</p>
@@ -36,9 +203,21 @@
 
         </ul>
     </section>
+    
+</div>
     <footer>
         <p>&copy; 2025 EduRahisi. All rights reserved.</p>
     </footer>
-
+</div>
+<script>
+document.getElementById('signup-btn').addEventListener('click', () => {
+    const form = document.getElementById('signup-form');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+});
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+});
+</script>
 </body>
 </html>
