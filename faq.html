@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - EduRahisi</title>
+    <meta name="description" content="Explore a wide range of courses offered by EduRahisi to enhance your learning experience.">
+    <meta name="keywords" content="courses, EduRahisi, online learning, education, skills development">
+</head>
+<body>
+    <h1 >Frequently Asked Questions</h1>
+    <h2 class="question">What is EduRahisi?</h2>
+    <p class="answer">EduRahisi is an online learning platform 
+        that offers a variety of courses to help 
+        learners enhance their skills and knowledge.</p>
+
+    <h2 class="question">How can I enroll in a course?</h2>
+    <p class="answer">To enroll in a course, simply visit the 
+        Courses page, select the course you are 
+        interested in, and follow the enrollment 
+        instructions.</p>
+
+    <h2 class="question">Is there a fee for courses?</h2>
+    <p class="answer">Some courses on EduRahisi are free, 
+        while others may require a fee. 
+        Please check the course details for 
+        more information.</p>
+
+    <h2 class="question">Can I get a certificate after completing a course?</h2>
+    <p class="answer">Yes, upon successful completion of a course, 
+        you will receive a certificate that you can 
+        share with potential employers or educational 
+        institutions.</p>
+    <h2 class="question">What subjects are available?</h2>
+    <p class="answer">EduRahisi offers a wide range of subjects, 
+        including Mathematics, Coding, English Language, 
+        and Science. You can explore the full list of 
+        courses on our Courses page.</p>
+    <h2 class="question">How can I access the courses?</h2>
+    <p class="answer">You can access the courses by creating an account 
+        on our platform. Once registered, you can log in 
+        and start exploring the available courses.</p>
+    <h2 class="question">Do I need any special software to take the courses?</h2>
+    <p class="answer">No special software is required to take the courses. 
+        You can access them through any web browser on your 
+        computer or mobile device.</p>
+
+    <h2 class="question">How can I contact support?</h2>
+    <p class="answer">If you have any questions or need assistance,
+         feel free to reach out to our support team at
+          <a href="mailto:mosebemos26@gmail.com">mosebemos26@gmail.com</a>.</p>
+<a href="index.html"><button>Back to Home</button></a>
+</body>
+<script>
+    // Add any JavaScript functionality here if needed
+    document.querySelectorAll('.question').forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        });
+    });
+</script>
+<footer>
+    <p>&copy; 2025 EduRahisi. All rights reserved.</p>
+</footer>
+
+</html>
