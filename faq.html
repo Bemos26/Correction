@@ -58,7 +58,7 @@
         .chatbot-container {
     position: fixed;
     right: 20px;
-    bottom: 20px;
+    top: 20px;
     width: 300px;
     z-index: 1000;
 }
@@ -143,6 +143,7 @@
     </div>
 </div>
 </div>
+<script src="https://js.puter.com/v2/"></script>
 
 <script>
     // Add any JavaScript functionality here if needed
@@ -154,6 +155,24 @@
         });
 
     });
+    document.getElementById('chatbot-toggle').addEventListener('click', () => {
+    const chatbotBox = document.querySelector('.chatbot-box');
+    chatbotBox.style.display = chatbotBox.style.display === 'none' ? 'block' : 'none';
+});
+
+document.getElementById('send-btn').addEventListener('click', () => {
+    const userMessage = document.getElementById('chat-input').value;
+    if (userMessage.trim() !== "") {
+        document.getElementById('chat-content').innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+        
+        puter.ai.chat(userMessage) // Using Puter.js for AI responses
+            .then(response => {
+                document.getElementById('chat-content').innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+            });
+        
+        document.getElementById('chat-input').value = ""; // Clear input field
+    }
+});
 </script>
 </body>
 <footer>
