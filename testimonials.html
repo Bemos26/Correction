@@ -9,9 +9,49 @@
 </html>
 </head>
 <body>
+    <style>
+        body {
+            text-align: center;
+            font-size: large;
+            background-color:cadetblue;
+            margin: 0 auto ;
+            width: 95%;
+            border-radius: 50px;
+        }
+        .testimonial {
+            background-color: aqua;
+            border-radius: 50px;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+        .home-button {
+            border-radius: 20px;
+            background-color: forestgreen;
+            color: antiquewhite;
+            margin-bottom: 50px;
+        }
+        .comments {
+            display: flex;
+            gap: 30px;
+            width: 60%;
+            margin: 0 auto;
+            overflow-x: scroll;
+            
+        }
+        .testimonial-container {
+            background-color:chocolate;
+            border-radius: 50px;
+            width: 95%;
+            margin: 0 auto;
+        }
+    </style>
+    <div class="testimonial-container">
     <h1>Testimonials</h1>
     <p>At EduRahisi, we value the feedback and experiences of our learners, teachers and parents.
          Here are some testimonials from our community:</p>
+    <div class="comments">
 
     <div class="testimonial">
         <h2>Beccah</h2>
@@ -55,10 +95,12 @@
         <p>"EduRahisi has been a game-changer for my learning.
             The resources are top-notch and the support is always there when I need it."</p>
     </div>
+    </div>
 
     <p>If you would like to share your testimonial, please contact us at <a href="mailto:mosebemos26@gmail.com">mosebemos26@gmail.com</a>.</p>
     <p>Ready to start learning? <a href="mailto:mosebemos26@gmail.com">Contact us</a> today!</p>
-    <a href="index.html"><button>Back to Home</button></a>
+    <a href="index.html"><button class="home-button">Back to Home</button></a>
+    </div>
     <footer>
         <p>&copy; 2025 EduRahisi. All rights reserved.</p>
     </footer>
