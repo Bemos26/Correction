@@ -89,6 +89,11 @@
     border: none;
     cursor: pointer;
 }
+.suggested-btn {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}
     </style>
     <div class="faq-container">
     <h1>Frequently Asked Questions</h1>
@@ -142,6 +147,14 @@
         </div>
         <input type="text" id="chat-input" placeholder="Type your question..." />
         <button id="send-btn">Send</button>
+        <div id="suggested-questions">
+    <button class="suggested-btn">What is EduRahisi?</button>
+    <button class="suggested-btn">How do I sign up?</button>
+    <button class="suggested-btn">What courses are available?</button>
+    <button class="suggested-btn">How can I contact support?</button>
+    <button class="suggested-btn">What is your mission?</button>
+</div>
+
     </div>
 </div>
 </div>
@@ -161,14 +174,38 @@
     const chatbotBox = document.querySelector('.chatbot-box');
     chatbotBox.style.display = chatbotBox.style.display === 'none' ? 'block' : 'none';
 });
+const keywordResponsesButtons = {
+    "What is EduRahisi?": "EduRahisi is an online learning platform that offers a variety of courses to help learners enhance their skills and knowledge..",
+    "How do I sign up?": "You can sign up by clicking the 'Sign Up' button on the homepage and filling out the registration form.",
+    "What courses are available?": "EduRahisi offers courses in mathematics, english language, programming, and science. Check the 'Courses' section for more details.",
+    "How can I contact support?": "You can reach our support team at mosebemos26@gmail.com.",
+    "What is your mission?": "At EduRahisi, we are dedicated to providing accessible and high-quality educational resources for students, teachers, and parents. Our mission is to bridge the gap between learners and educators, fostering a collaborative environment that promotes growth and success."
+};
+
+// Handle Suggested Question Clicks
+document.querySelectorAll('.suggested-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const userMessage = button.innerText;
+        document.getElementById('chat-content').innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+        document.getElementById('chat-content').innerHTML += `<p><strong>Bot:</strong> ${keywordResponsesButtons[userMessage]}</p>`;
+    });
+});
+
 // EduRahisi FAQ Responses with Keyword Detection
 const keywordResponses = {
-    "courses": "EduRahisi offers courses in Mathematics, programming, coding, science and English language. Check the 'Courses' section for more details.",
+    "courses": "EduRahisi offers a wide range of subjects, including Mathematics, Coding, English Language, and Science. You can explore the full list of courses on our Courses page.",
     "signup": "You can sign up by clicking the 'Sign Up' button on the homepage and filling out the registration form.",
     "contact": "You can reach our support team at mosebemos26@gmail.com.",
     "faq": "Visit the FAQ section for common questions about EduRahisi.",
     "why": "EduRahisi is flexible and easier to use.",
-    "testimonials": "You can check what our user say about us in the testimonial section in the homepage."
+    "Certificate": "Yes, upon successful completion of a course, you will receive a certificate that you can share with potential employers or educational  institutions.",
+    "edurahisi": "EduRahisi is an online learning platform that offers a variety of courses to help learners enhance their skills and knowledge.",
+
+    "testimonials": "You can check what our user say about us in the testimonial section in the homepage.",
+    "mission": "At EduRahisi, we are dedicated to providing accessible and high-quality educational resources for students, teachers, and parents. Our mission is to bridge the gap between learners and educators, fostering a collaborative environment that promotes growth and success.",
+    "vision": "We envision a world where education is inclusive, engaging, and effective, shaping the mentality of learners and the future of learning.",
+    "values": "Inclusivity: We believe in making education accessible to everyone.Collaboration: We foster a community where learners and educators can work together.Innovation: We embrace new ideas and technologies to enhance the learning experience.Integrity: We uphold the highest standards of honesty and transparency in all our interactions.",
+
 };
 
 // Toggle Chatbot Visibility
