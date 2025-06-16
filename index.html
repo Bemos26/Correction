@@ -131,9 +131,34 @@ nav ul {
 nav li {
     margin: 10px 0;
 }
+/* Default Light Theme */
+:root {
+    --background-color: brown;
+    --text-color: #000000;
+}
+
+/* Dark Theme */
+.dark-theme {
+    --background-color: #333333;
+    --text-color:forestgreen;
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+#theme-toggle {
+    top: 20px;
+    background-color: forestgreen;
+    border-radius: 20px;
+    right: 20px;
+}
 
     </style>
     <div class="home-container">
+        <button id="theme-toggle">Switch Theme</button>
         <button id="menu-toggle">Menu</button>
         <div id="menu" style="display: none;">
         <nav>
@@ -209,7 +234,7 @@ nav li {
 
         </ul>
     </section>
-    
+<p>Visitor Count: <span id="visit-counter">0</span></p>
 </div>
     <footer>
         <p>&copy; 2025 EduRahisi. All rights reserved.</p>
@@ -224,6 +249,38 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
     const menu = document.getElementById('menu');
     menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
 });
+const themeToggle = document.getElementById('theme-toggle');
+
+// Check if user has a saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.body.classList.add(savedTheme);
+}
+
+// Toggle Theme on Button Click
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+
+    // Save user preference
+    const currentTheme = document.body.classList.contains('dark-theme') ? 'dark-theme' : '';
+    localStorage.setItem('theme', currentTheme);
+});
+// Check if a count already exists in localStorage
+let visitCount = localStorage.getItem("visitCount");
+
+// If no previous count, initialize at 0
+if (!visitCount) {
+    visitCount = 0;
+}
+
+// Convert to a number and increase the count
+visitCount = Number(visitCount) + 1;
+
+// Store the updated count in localStorage
+localStorage.setItem("visitCount", visitCount);
+
+// Display the count on the page
+document.getElementById("visit-counter").textContent = visitCount;
 </script>
 </body>
 </html>
